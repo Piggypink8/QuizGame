@@ -50,9 +50,9 @@ joinRoom.addEventListener('click', (e) => {
 //  Empieza el juego 
 socket.on('start', roomData => {
     const { boardid, turn } = roomData;
+    console.log("Comienza el turno del jugador: " + turn.name)
     const rollDiceBtn = document.getElementById('dice');
     if(turn.id === socket.id){
-        console.log(`turno de ${turn.name}, id ${turn.id}`);
         rollDiceBtn.style.display = "flex"
         rollDiceBtn.addEventListener('click', () => {
             //tiro del dado
@@ -132,10 +132,7 @@ for (const btn of colorsBtn) {
     })
 }
 
-// FUNCION PARA UNIRSE A UNA SALA
 
-// FUNCION PARA CREAR UNA SALA
-const createBtn = document.getElementById("newRoom")
 const logIn = document.getElementById("logInSection")
 
 const player1 = {
