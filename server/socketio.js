@@ -107,7 +107,7 @@ io.on('connect', socket => {
                         boardid,
                         turn
                     }
-                    
+                    console.log("Ahora es turno del jugador: " + player.name)
                     io.emit('start', aux);
                 }
             });
@@ -115,7 +115,7 @@ io.on('connect', socket => {
             players.forEach(player => {
                 if(player.id != turn.id){
                     turn = player;
-                    console.log(turn)
+                    console.log("Ahora es turno del jugador: " + player.name)
                     const aux = {
                         boardid,
                         turn
